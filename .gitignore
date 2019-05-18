@@ -1,2 +1,8 @@
 .vscode
 /results*
+*.jpg
+*.bmp
+*.jpeg
+*.pgm
+*.ppm
+*.png
