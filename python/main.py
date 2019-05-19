@@ -3,18 +3,38 @@ import cv2
 def main():
     print("Main started")
 
-    img = cv2.imread("fries.jpg", cv2.COLOR_BGR2GRAY)
+    startingIndex = 0
+    lastIndex = 172
 
-    grayImage = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+    for i in range(startingIndex, lastIndex + 1):
+        path = "../images/{0}.jpg".format(i)
+        print(path)
+        img = load_image(path)
+        img = convert_to_gray(img)
+        img = resize_image(img)
+        save_as_pgm(img, i)
 
-    resizedGrayImage = cv2.resize(grayImage,(5,5))
+    print("Main finished")
+    
 
+def resize_image(image):
+    return cv2.resize(image, (32,32))
+
+
+def load_image(path):
+    return cv2.imread(path, cv2.COLOR_BGR2GRAY)
+
+
+def convert_to_gray(image):
+    return cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+
+def save_as_pgm(image, name):
     params = []
     params.append(cv2.IMWRITE_PXM_BINARY)
     params.append(0)
-    cv2.imwrite("gray.pgm", resizedGrayImage, params)
-    print("Main finished")
-    
+    cv2.imwrite("../processedImages/{0}.pgm".format(name), image, params)
+
 
 if __name__ == "__main__":
     main()

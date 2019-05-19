@@ -1,3 +1,5 @@
 #!/bin/bash
 
-python3 main.py
+rm ../processedImages/*.pgm
+
+time -p python3 main.py
