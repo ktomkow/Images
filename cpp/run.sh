@@ -1,3 +1,5 @@
 #!/bin/bash
 
-./a.out
+rm ../processedImages/*.pgm
+
+time -p ./a.out
