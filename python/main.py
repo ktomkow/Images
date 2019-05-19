@@ -2,8 +2,6 @@ import cv2
 import sys
 
 def main():
-    print("Main started")
-
     firstIndex = 0
     lastIndex = int(sys.argv[1])
     path = ""
@@ -15,8 +13,7 @@ def main():
         img = resize_image(img)
         save_as_pgm(img, i)
 
-    print("Main finished")
-    
+
 
 def resize_image(image):
     return cv2.resize(image, (32,32))
