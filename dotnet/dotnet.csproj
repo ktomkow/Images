@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="OpenCV" Version="2.4.11" />
   </ItemGroup>
 
 </Project>
