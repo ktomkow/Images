@@ -1,6 +1,9 @@
+import sys
+
 def main():
+    images_number = int(sys.argv[1])
     good_lines = []
-    originalFile = "cppResults.txt"
+    originalFile = "cppResults{0}.txt".format(images_number)
     with open(originalFile) as f:
         content = f.readlines()
 

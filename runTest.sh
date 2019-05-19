@@ -2,12 +2,13 @@
 
 # separator between labels and values, might be helpful to import data into csv/excel
 separator=";"
-lastIndex=1 # 172 max so far
+last_index=1 # 172 max so far
+number_of_images=$(($last_index+1))
 repetitions=10 # how many time the test should be performed
 
-python_result_file="../results/pythonResults.txt"
-dotnet_result_file="../results/dontetResults.txt"
-cpp_result_file="../results/cppResults.txt"
+python_result_file="../results/pythonResults$number_of_images.txt"
+dotnet_result_file="../results/dotnetResults$number_of_images.txt"
+cpp_result_file="../results/cppResults$number_of_images.txt"
 
 function write_labels()
 {
@@ -48,6 +49,7 @@ function perform_test()
         rm ~/Thesis/Images/processedImages/*
         echo Running test $test_number of $repetitions
         wait
+
         /usr/bin/time -f $format $command 2>> $resultFile
         wait
     done
@@ -64,10 +66,11 @@ function python_tests()
 
     source env/bin/activate
 
-    command="python main.py $lastIndex"
+    command="python main.py $last_index"
     echo Running command: $command
     wait
     perform_test "$command" $resultFile $repetitions  
+    wait
 
     deactivate
 
@@ -97,14 +100,14 @@ function cpp_tests()
     resultFile=$cpp_result_file
     write_labels $resultFile
 
-    command="./a.out $lastIndex 2>/dev/null"
+    command="./a.out $last_index"
     echo Running command: $command
     wait
     perform_test "$command" $resultFile $repetitions  
-
+    wait
     cd ..
     cd results
-    python clean.py
+    python clean.py $number_of_images
     cd ..
     echo -e "C++ tests finished\n"
 }
