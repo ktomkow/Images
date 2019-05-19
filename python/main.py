@@ -1,14 +1,15 @@
 import cv2
+import sys
 
 def main():
     print("Main started")
 
-    startingIndex = 0
-    lastIndex = 172
+    firstIndex = 0
+    lastIndex = int(sys.argv[1])
+    path = ""
 
-    for i in range(startingIndex, lastIndex + 1):
+    for i in range(firstIndex, lastIndex + 1):
         path = "../images/{0}.jpg".format(i)
-        print(path)
         img = load_image(path)
         img = convert_to_gray(img)
         img = resize_image(img)

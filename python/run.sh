@@ -2,4 +2,4 @@
 
 rm ../processedImages/*.pgm
 
-time -p python3 main.py
+time -p python3 main.py 172
