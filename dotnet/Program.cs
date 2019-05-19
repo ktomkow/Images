@@ -5,7 +5,8 @@ namespace dotnet
     {
         static void Main(string[] args)
         {
-            var imagePath = "fries.jpg"
+            var imagePath = "fries.jpg";
+            System.Console.WriteLine(imagePath);
             Console.WriteLine("Hello World!");
         }
     }
