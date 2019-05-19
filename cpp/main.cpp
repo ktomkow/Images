@@ -52,18 +52,15 @@ void DisplayImage(Mat image)
 
 int main(int argc, char** argv)
 {
-    cout << "OpenCV version: " << CV_VERSION << endl;
-    cout << "Seems like it works " << endl;
     int firstIndex = 0;
-    int lastIndex = 172;
+    int lastIndex = strtol(argv[1], NULL, 10);
     stringstream path;
     Mat image;
 
-    for(int i = 0; i <= 172; i++)
+    for(int i = firstIndex; i <= lastIndex; i++)
     {
         path.str("");
         path << "../images/" << i << ".jpg";
-        cout << path.str() << endl;
 
         image = LoadImage(path.str());
         image = ConvertToGray(image);
