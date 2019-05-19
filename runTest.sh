@@ -2,8 +2,8 @@
 
 # separator between labels and values, might be helpful to import data into csv/excel
 separator=";"
-lastIndex=10 # 172 max so far
-repetitions=1 # how many time the test should be performed
+lastIndex=1 # 172 max so far
+repetitions=10 # how many time the test should be performed
 
 python_result_file="../results/pythonResults.txt"
 dotnet_result_file="../results/dontetResults.txt"
@@ -38,6 +38,7 @@ function perform_test()
     format=$format"%c$separator"    # Number of times the process was context-switched involuntarily (because the time slice expired)
     format=$format"%w$separator"    # Number of waits: times that the program was context-switched voluntarily, for instance while waiting for an I/O operation to complete  
     format=$format"%x$separator"    # exit status (other than 0 is an error)
+                                    # here for C++ status is never 0 :(
 
     wait
 
@@ -101,6 +102,9 @@ function cpp_tests()
     wait
     perform_test "$command" $resultFile $repetitions  
 
+    cd ..
+    cd results
+    python clean.py
     cd ..
     echo -e "C++ tests finished\n"
 }
