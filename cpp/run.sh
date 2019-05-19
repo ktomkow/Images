@@ -2,4 +2,4 @@
 
 rm ../processedImages/*.pgm
 
-time -p ./a.out
+time -p ./a.out 172
