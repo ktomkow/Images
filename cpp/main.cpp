@@ -39,7 +39,7 @@ void SaveAsPgm(Mat image, string name)
     compression_params.push_back(IMWRITE_PXM_BINARY);
     compression_params.push_back(0);                    // 1 - binary format, 0 - readable format
 
-    string path = "../processedImages/cpp/" + name + ".pgm";
+    string path = "../processedImages/" + name + ".pgm";
     imwrite(path, image, compression_params);
 }
 

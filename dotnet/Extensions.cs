@@ -15,7 +15,7 @@ namespace dotnet
             int width = image.Width;
             int height = image.Height;
 
-            var path = $"../processedImages/dotnet/{name}/.pgm";
+            var path = $"../processedImages/{name}/.pgm";
             var builder = new StringBuilder();
 
             FileStream fileStream = new FileStream(path, FileMode.Create);
