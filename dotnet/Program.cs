@@ -17,22 +17,17 @@ namespace dotnet
 
             Image<Rgba32> image;
 
-            for (int i = 0; i <= lastIndex; i++)
+            for (int i = firstIndex; i <= lastIndex; i++)
             {
-                // image = Image.Load(imagePath);
+                using (image = Image.Load(imagePath))
+                {
+                    image.ConvertToGray();
+                    image.Resize();
+                    image.SaveAsPgm("here.pgm");
+                }
             }
 
-            // var image = Image.Load(imagePath);
-            // using (Image<Rgba32> image = Image.Load(imagePath))
-            // {
-            //     image.Mutate(x => x
-            //         // .Resize(image.Width / 2, image.Height / 2)
-            //         .Resize(800, 600)
-            //         .Grayscale());
-            //     // image.Save("here.jpg"); // Automatic encoder selected based on extension.
-            //     // image.Sav
-            //     image.SaveAsPgm("here.pgm");
-            // }
+            
 
             Console.WriteLine("Hello World!");
         }
