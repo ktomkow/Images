@@ -15,10 +15,14 @@ namespace dotnet
             int firstIndex = 0;
             int lastIndex = Int32.Parse(args[0]);
 
+            string path;
+
             Image<Rgba32> image;
 
             for (int i = firstIndex; i <= lastIndex; i++)
             {
+                path = $"../images/{i}.jpg";
+                System.Console.WriteLine(path);
                 using (image = Image.Load(imagePath))
                 {
                     image.ConvertToGray();
@@ -26,8 +30,6 @@ namespace dotnet
                     image.SaveAsPgm("here.pgm");
                 }
             }
-
-            
 
             Console.WriteLine("Hello World!");
         }
