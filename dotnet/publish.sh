@@ -6,8 +6,7 @@ wait
 sudo dotnet publish -o ~/Thesis/Testing/Images/dotnet -r linux-x64 -f netcoreapp2.2 --self-contained -c Release
 wait
 
-cd ~/Thesis/Testing/Images/dontet/
+sudo chmod +x ~/Thesis/Testing/Images/dotnet/dotnet
 wait
-sudo chmod +x dotnet
 
 echo Done
