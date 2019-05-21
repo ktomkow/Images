@@ -19,7 +19,6 @@ namespace dotnet
             for (int i = firstIndex; i <= lastIndex; i++)
             {
                 path = $"../images/{i}.jpg";
-                System.Console.WriteLine(path);
                 using (image = Image.Load(path))
                 {
                     image.ConvertToGray();
@@ -27,8 +26,6 @@ namespace dotnet
                     image.SaveAsPgm(i.ToString());
                 }
             }
-
-            Console.WriteLine("Hello World!");
         }
     }
 }
