@@ -15,7 +15,7 @@ cd dotnet/
 wait
 cd..
 
-cd results
+cd results/
 cp clean.py ~/Thesis/Testing/Images/results/
 cd ..
 
