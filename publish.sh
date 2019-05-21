@@ -15,4 +15,8 @@ cd dotnet/
 wait
 cd..
 
+cd results
+cp clean.py ~/Thesis/Testing/Images/results/
+cd ..
+
 echo Done
