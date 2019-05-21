@@ -24,7 +24,7 @@ namespace dotnet
                 {
                     image.ConvertToGray();
                     image.Resize();
-                    image.SaveAsPgm("here");
+                    image.SaveAsPgm(i.ToString());
                 }
             }
 
