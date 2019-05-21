@@ -31,7 +31,8 @@ def save_as_pgm(image, name):
     params = []
     params.append(cv2.IMWRITE_PXM_BINARY)
     params.append(0)
-    cv2.imwrite("../processedImages/python/{0}.pgm".format(name), image, params)
+    path = "../processedImages/python/{0}.pgm".format(name), image, params
+    cv2.imwrite(path)
 
 
 if __name__ == "__main__":
