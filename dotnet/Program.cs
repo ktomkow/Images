@@ -9,9 +9,6 @@ namespace dotnet
     {
         static void Main(string[] args)
         {
-            var imagePath = "fries.jpg";
-            System.Console.WriteLine(imagePath);
-
             int firstIndex = 0;
             int lastIndex = Int32.Parse(args[0]);
 
@@ -23,7 +20,7 @@ namespace dotnet
             {
                 path = $"../images/{i}.jpg";
                 System.Console.WriteLine(path);
-                using (image = Image.Load(imagePath))
+                using (image = Image.Load(path))
                 {
                     image.ConvertToGray();
                     image.Resize();
