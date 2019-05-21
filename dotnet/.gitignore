@@ -346,3 +346,7 @@ healthchecksdb
 *.jpeg
 *.png
 *.bmp
+
+# build
+out
+out/*
