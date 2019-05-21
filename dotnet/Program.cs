@@ -3,7 +3,6 @@ using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Processing;
 
-
 namespace dotnet
 {
     class Program
@@ -18,7 +17,9 @@ namespace dotnet
                 image.Mutate(x => x
                     .Resize(image.Width / 2, image.Height / 2)
                     .Grayscale());
-                image.Save("here.jpg"); // Automatic encoder selected based on extension.
+                // image.Save("here.jpg"); // Automatic encoder selected based on extension.
+                // image.Sav
+                image.SaveAsPgm("here.pgm");
             }
 
             Console.WriteLine("Hello World!");
