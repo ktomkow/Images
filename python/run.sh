@@ -1,3 +1,8 @@
 #!/bin/bash
 
-python3 main.py
+rm ../processedImages/*.pgm
+
+source env/bin/activate
+python3 main.py 172
+deactivate
+echo "done"

@@ -1,5 +1,5 @@
 .vscode
-/results*
+/results/*.txt
 *.jpg
 *.bmp
 *.jpeg
