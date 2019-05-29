@@ -13,6 +13,6 @@ cd ..
 cd dotnet/
 ./publish.sh
 wait
-cd..
+cd ..
 
 echo Done
